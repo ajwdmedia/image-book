@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "imagebook",
+  "version": "${version}",
+  "name": "ImageBook",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/imagebook/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "media.ajwd.imagebook.client.ImagebookDataGenerator"
+    ],
+    "client": [
+      "media.ajwd.imagebook.client.ImagebookClient"
+    ],
+    "main": [
+      "media.ajwd.imagebook.Imagebook"
+    ]
+  },
+  "mixins": [
+    "imagebook.mixins.json",
+    {
+      "config": "imagebook.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
